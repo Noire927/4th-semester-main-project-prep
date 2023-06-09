@@ -1,0 +1,487 @@
+@use "../core/" as *;
+
+$header-padding: 1rem;
+$header-logo-spacing: 1rem;
+$header-item-spacing: 2.25rem;
+$header-arrow-size: 0.5rem;
+$section-padding: 1rem;
+$section-margin-top: 6.25rem; // Convert to rem (100px)
+$section-padding-left: 9.34375rem; // Convert to rem (149px)
+
+.section-divider {
+  display: inline-block;
+  width: 82%;
+  margin: 3.125rem 9.34375rem 0 9.34375rem; // Convert to rem (149px) sides and 5(0px) top
+  border-top: 2px solid #000000;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+
+  &__logo {
+    margin-right: 10px;
+
+    &-image {
+      width: 21.8125rem; // Equivalent to 349px converted to rem
+      height: 5.5625rem; // Equivalent to 89px converted to rem
+    }
+  }
+
+  &__navbar {
+    margin-left: auto;
+
+    &-list {
+      list-style: none;
+      display: flex;
+
+      & > .header__navbar-item {
+        margin-right: 10px;
+
+        & > .header__navbar-link {
+          font-family: "Lato", sans-serif;
+          font-size: 18px;
+          text-decoration: none;
+          color: #000;
+          position: relative;
+          margin-right: 2rem; // Adjust the margin value as needed
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        & > .header__sub-links {
+          display: none;
+          position: absolute;
+          z-index: 1;
+          background-color: #fff;
+          padding: 10px;
+
+          & > .header__sub-link-item {
+            margin-bottom: 5px;
+
+            & > .header__sub-link {
+              text-decoration: none;
+              color: #000;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+
+        &:hover > .header__sub-links {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__contact-button {
+    margin-left: $header-item-spacing;
+    background-color: #2b9763;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem; // Convert to rem
+    cursor: pointer;
+    font-family: "Lato", sans-serif;
+    border-radius: 16px;
+
+    &:hover {
+      background-color: #41d990;
+    }
+  }
+
+  // Remove bullet point from sub-list
+  &__sub-link-item {
+    list-style-type: none;
+  }
+}
+
+.header__navbar-arrow {
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid black;
+  border-top: 2px solid black;
+  transition: transform 0.3s ease-in-out;
+}
+
+.rotate {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.hero-banner {
+  background-image: url("images/BannerBackground.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  color: #fff;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__text-bubble {
+    position: relative;
+    left: 9.3125rem; // 149px converted to rem
+    top: 9.3125rem; // 149px converted to rem
+    width: 28rem; // 448px converted to rem
+    height: 9.25rem; // 148px converted to rem
+    padding: 20px;
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.7
+    ); // Background color with 70% opacity
+    border-radius: 20px;
+    z-index: 1;
+    color: #000; // Font color is black
+    font-family: "Archivo", sans-serif; // Set font to Archivo
+    font-size: 2.5rem; // Equivalent to 40px
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -20px;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 10px 20px 10px 0;
+      border-color: transparent #fff transparent transparent;
+    }
+
+    &__text {
+      font-family: "Archivo", sans-serif;
+      font-size: 40px;
+      line-height: 1.2;
+      margin: 0;
+    }
+  }
+
+  &__image {
+    height: 37.5rem; // 600px converted to rem
+    border-radius: 20px;
+  }
+}
+/* Adjusting the section size */
+.hero-banner {
+  height: 37.5rem; // Same height as the hero image
+}
+
+.yourPartner {
+  margin-top: 6.25rem; // Convert to rem (100px)
+  padding-left: 9.34375rem; // Convert to rem (149px)
+  max-height: 30rem; // Convert to rem (480px)
+  overflow-y: auto;
+
+  .yourPartner {
+    margin-top: 6.25rem; // Convert to rem (100px)
+    padding-left: 9.34375rem; // Convert to rem (149px)
+
+    &__title {
+      font-family: "Archivo", sans-serif;
+      font-weight: bold;
+      font-size: 1.875rem; // Convert to rem (30px)
+      color: #17a754;
+      max-width: 29.375rem; // Convert to rem (470px)
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &__paragraph {
+      margin-top: 3.125rem; // Convert to rem (50px)
+      font-family: "Lato", sans-serif;
+      font-size: 1.125rem; // Convert to rem (18px)
+      color: #000000;
+      max-width: 29.375rem; // Convert to rem (470px)
+    }
+  }
+}
+
+.yourPartner__picture {
+  width: 40%; // Adjust the width as desired
+  max-width: 50;
+  height: 40%; // Adjust the height as desired
+  max-height: 50%;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.theApp {
+  margin-top: $section-margin-top;
+  padding-left: $section-padding-left;
+  margin-bottom: 3.125rem; // Convert to rem (100px)
+
+  &__title {
+    font-family: "Archivo", sans-serif;
+    font-weight: bold;
+    font-size: 1.875rem; // Convert to rem (30px)
+    color: #17a754;
+    max-width: 29.375rem; // Convert to rem (470px)
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__paragraph {
+    margin-top: 3.125rem; // Convert to rem (50px)
+    font-family: "Lato", sans-serif;
+    font-size: 1.125rem; // Convert to rem (18px)
+    color: #000000;
+    max-width: 29.375rem; // Convert to rem (470px)
+  }
+
+  &__button {
+    width: 29.375rem; // Convert to rem (470px)
+    height: 3.5rem; // Convert to rem (56px)
+    border-radius: 16px;
+    background-color: #ffffff;
+    border-style: solid 1px black;
+    cursor: pointer;
+    border: none;
+    color: #000000;
+    font-family: "Archivo", sans-serif;
+    font-size: 1.125rem; // Convert to rem (18px)
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      background-color: #41d990;
+    }
+  }
+}
+
+.ourMission {
+  margin-top: $section-margin-top;
+  padding-left: $section-padding-left;
+
+  &__title {
+    font-family: "Archivo", sans-serif;
+    font-weight: bold;
+    font-size: 1.875rem;
+    color: #17a754;
+    max-width: 29.375rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 50px;
+  }
+
+  &__paragraph {
+    font-family: "Lato", sans-serif;
+    font-size: 1.125rem;
+    color: #000000;
+    max-width: 29.375rem;
+    margin-top: 10px;
+  }
+
+  &__button {
+    width: 29.375rem; // Convert to rem (470px)
+    height: 3.5rem; // Convert to rem (56px)
+    border-radius: 16px;
+    background-color: #2b9763;
+    cursor: pointer;
+    border: none;
+    color: #ffffff;
+    font-family: "Archivo", sans-serif;
+    font-size: 1.125rem; // Convert to rem (18px)
+    &:hover {
+      background-color: #41d990;
+    }
+  }
+
+  &__subtext {
+    font-family: "Lato", sans-serif;
+    font-size: 1.125rem;
+    color: #000000;
+    margin-top: 50px; // Move the subtext 50px down
+  }
+}
+
+.acknowledgedBy {
+  background-color: #dddddd;
+  margin-top: 10.25rem; // Convert 164px to rem
+  padding: 3.75rem 0; // Convert 30px to rem
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden; // Hide the overflow to create the effect
+  }
+
+  &__text {
+    font-family: "Archivo", sans-serif;
+    font-size: 2rem;
+    color: #000000;
+    margin-bottom: 3.125rem; // Convert 50px to rem
+  }
+
+  &__imageContainer {
+    display: flex;
+    gap: 10rem;
+    height: 100px; // Adjust the height as desired
+  }
+
+  &__imageContainer img {
+    max-width: 80%; // Set maximum width to prevent image from exceeding container width
+    max-height: 80%; // Set maximum height to prevent image from exceeding container height
+    margin-right: 20px; // Adjust the margin as desired
+  }
+}
+
+.alreadyMember {
+  background-color: #3c3c3c;
+  padding: 4.25rem 0; // Convert 68px to rem
+  text-align: center;
+
+  &__title {
+    font-family: "Archivo", sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem; // Convert 24px to rem
+    color: #ffffff;
+  }
+
+  &__paragraph {
+    margin-top: 1.875rem; // Convert 30px to rem
+    font-family: "Lato", sans-serif;
+    font-size: 1.125rem; // Convert 18px to rem
+    color: #ffffff;
+  }
+
+  &__buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem; // Convert 40px to rem
+
+    img {
+      max-width: 12.375rem; // Convert 198px to rem
+      height: auto;
+      opacity: 0.6;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: #000000;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      font-family: "Archivo", sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-family: "Lato", sans-serif;
+      font-size: 16px;
+      color: #ffffff;
+      margin: 0;
+      text-align: center;
+    }
+
+    &__links {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
+
+      li {
+        margin-bottom: 0.5rem;
+
+        a {
+          font-family: "Archivo", sans-serif;
+          font-size: 16px;
+          color: #ffffff; // Set anchor color to white
+          text-decoration: none;
+          transition: color 0.3s ease-in-out;
+
+          &:hover {
+            text-decoration: underline;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+
+    &__social-icons {
+      display: flex;
+      align-items: center;
+
+      a {
+        width: 20%; // Adjust the width as desired
+        max-width: 20%;
+        height: 32px; // Adjust the height as desired
+        max-height: 20%;
+        margin-right: 0.5rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.footerImages {
+  width: 40%; // Adjust the width as desired
+  max-width: 100%;
+  height: 32px; // Adjust the height as desired
+  max-height: 100%;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+/* this is purely for the examn presentation */
+.box {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  z-index: 9999;
+  font-family: Arial, sans-serif;
+  border-radius: 26px;
+}
+
+.box__text {
+  margin-top: 50%;
+  transform: translateY(-50%);
+}
+
+.box__remove-text {
+  margin-top: 10px;
+  font-size: 14px;
+}
