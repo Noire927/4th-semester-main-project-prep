@@ -8,113 +8,89 @@ $section-padding: 1rem;
 $section-margin-top: 6.25rem; // Convert to rem (100px)
 $section-padding-left: 9.34375rem; // Convert to rem (149px)
 
-.section-divider {
-  display: inline-block;
-  width: 82%;
-  margin: 3.125rem 9.34375rem 0 9.34375rem; // Convert to rem (149px) sides and 5(0px) top
-  border-top: 2px solid #000000;
-}
-
 .header {
   display: flex;
   align-items: center;
   padding: 10px;
-
-  &__logo {
-    margin-right: 10px;
-
-    &-image {
-      width: 21.8125rem; // Equivalent to 349px converted to rem
-      height: 5.5625rem; // Equivalent to 89px converted to rem
-    }
-  }
-
-  &__navbar {
-    margin-left: auto;
-
-    &-list {
-      list-style: none;
-      display: flex;
-
-      & > .header__navbar-item {
-        margin-right: 10px;
-
-        & > .header__navbar-link {
-          font-family: "Lato", sans-serif;
-          font-size: 18px;
-          text-decoration: none;
-          color: #000;
-          position: relative;
-          margin-right: 2rem; // Adjust the margin value as needed
-
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-
-        & > .header__sub-links {
-          display: none;
-          position: absolute;
-          z-index: 1;
-          background-color: #fff;
-          padding: 10px;
-
-          & > .header__sub-link-item {
-            margin-bottom: 5px;
-
-            & > .header__sub-link {
-              text-decoration: none;
-              color: #000;
-
-              &:hover {
-                text-decoration: underline;
-              }
-            }
-          }
-        }
-
-        &:hover > .header__sub-links {
-          display: block;
-        }
-      }
-    }
-  }
-
-  &__contact-button {
-    margin-left: $header-item-spacing;
-    background-color: #2b9763;
-    color: #fff;
-    border: none;
-    padding: 1rem 2rem; // Convert to rem
-    cursor: pointer;
-    font-family: "Lato", sans-serif;
-    border-radius: 16px;
-
-    &:hover {
-      background-color: #41d990;
-    }
-  }
-
-  // Remove bullet point from sub-list
-  &__sub-link-item {
-    list-style-type: none;
-  }
 }
 
-.header__navbar-arrow {
+.header__logo {
+  margin-right: 10px;
+}
+
+.header__logo-image {
+  width: 21.8125rem; /* Equivalent to 349px converted to rem */
+  height: 5.5625rem; /* Equivalent to 89px converted to rem */
+}
+
+.header__navbar {
+  margin-left: auto;
+}
+
+.header__navbar-list {
+  list-style: none;
+  display: flex;
+}
+
+.header__navbar-item {
+  margin-right: 10px;
+}
+
+.header__navbar-link {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  margin-right: 2rem;
+}
+
+.header__navbar-link:hover {
+  text-decoration: underline;
+}
+
+.header__sub-links {
+  display: none;
   position: absolute;
-  top: 50%;
-  right: -20px;
-  transform: translateY(-50%);
-  width: 10px;
-  height: 10px;
-  border-right: 2px solid black;
-  border-top: 2px solid black;
-  transition: transform 0.3s ease-in-out;
+  z-index: 1;
+  background-color: #fff;
+  padding: 10px;
 }
 
-.rotate {
-  transform: translateY(-50%) rotate(180deg);
+.header__sub-link-item {
+  margin-bottom: 5px;
+}
+
+.header__sub-link {
+  text-decoration: none;
+  color: #000;
+}
+
+.header__sub-link:hover {
+  text-decoration: underline;
+}
+
+.header__navbar-item:hover .header__sub-links {
+  display: block;
+}
+
+.header__contact-button {
+  margin-left: $header-item-spacing;
+  background-color: #2b9763;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem; /* Convert to rem */
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+  border-radius: 16px;
+}
+
+.header__contact-button:hover {
+  background-color: #41d990;
+}
+
+.header__sub-link-item {
+  list-style-type: none;
 }
 
 .hero-banner {
@@ -123,6 +99,8 @@ $section-padding-left: 9.34375rem; // Convert to rem (149px)
   background-position: center;
   padding: 40px;
   color: #fff;
+  width: auto;
+  height: 37.125rem;
 
   &__content {
     display: flex;
@@ -179,48 +157,69 @@ $section-padding-left: 9.34375rem; // Convert to rem (149px)
     border-radius: 20px;
   }
 }
-/* Adjusting the section size */
-.hero-banner {
-  height: 37.5rem; // Same height as the hero image
-}
 
 .yourPartner {
   margin-top: 6.25rem; // Convert to rem (100px)
   padding-left: 9.34375rem; // Convert to rem (149px)
   max-height: 30rem; // Convert to rem (480px)
   overflow-y: auto;
+  position: relative; // Add position relative
 
-  .yourPartner {
-    margin-top: 6.25rem; // Convert to rem (100px)
-    padding-left: 9.34375rem; // Convert to rem (149px)
+  &__content {
+    display: flex;
+    align-items: flex-start; // Align content to the top
+  }
 
-    &__title {
-      font-family: "Archivo", sans-serif;
-      font-weight: bold;
-      font-size: 1.875rem; // Convert to rem (30px)
-      color: #17a754;
-      max-width: 29.375rem; // Convert to rem (470px)
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+  &__text {
+    flex: 1; // Take remaining width
+  }
 
-    &__paragraph {
-      margin-top: 3.125rem; // Convert to rem (50px)
-      font-family: "Lato", sans-serif;
-      font-size: 1.125rem; // Convert to rem (18px)
-      color: #000000;
-      max-width: 29.375rem; // Convert to rem (470px)
-    }
+  &__title {
+    font-family: "Archivo", sans-serif;
+    font-weight: bold;
+    font-size: 1.875rem; // Convert to rem (30px)
+    color: #17a754;
+    max-width: 29.375rem; // Convert to rem (470px)
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__paragraph {
+    margin-top: 3.125rem; // Convert to rem (50px)
+    font-family: "Lato", sans-serif;
+    font-size: 1.125rem; // Convert to rem (18px)
+    color: #000000;
+    max-width: 29.375rem; // Convert to rem (470px)
+  }
+
+  &__pictures {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end; // Change align-items to flex-end
+    margin-left: 1rem;
+    margin-right: 9.34375rem;
+    position: absolute; // Add position absolute
+    bottom: 0; // Position the images at the bottom
+    right: 0; // Position the images at the right
+  }
+
+  &__picture {
+    width: 14.875rem; /* Convert to rem (238px) */
+    height: 14.875rem; /* Convert to rem (238px) */
+    margin-left: 0.5rem;
+    border-radius: 1.5625rem; /* Convert to rem (25px) */
+  }
+  .yourPartner__picture + .yourPartner__picture {
+    margin-left: 2.5rem; /* Convert to rem (40px) */
   }
 }
 
-.yourPartner__picture {
-  width: 40%; // Adjust the width as desired
-  max-width: 50;
-  height: 40%; // Adjust the height as desired
-  max-height: 50%;
-  margin-right: 0.5rem;
-  cursor: pointer;
+.section-divider {
+  height: 0.125rem; /* Equivalent to 2px converted to rem */
+  background-color: black;
+  margin-top: 4.6875rem; /* Equivalent to 75px converted to rem */
+  margin-left: 9.3125rem; /* Equivalent to 149px converted to rem */
+  margin-right: 9.3125rem; /* Equivalent to 149px converted to rem */
 }
 
 .theApp {

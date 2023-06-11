@@ -302,13 +302,6 @@ template {
   display: none;
 }
 
-.section-divider {
-  display: inline-block;
-  width: 82%;
-  margin: 3.125rem 9.34375rem 0 9.34375rem;
-  border-top: 2px solid #000000;
-}
-
 .header {
   display: flex;
   align-items: center;
@@ -320,8 +313,8 @@ template {
 }
 
 .header__logo-image {
-  width: 21.8125rem;
-  height: 5.5625rem;
+  width: 21.8125rem; /* Equivalent to 349px converted to rem */
+  height: 5.5625rem; /* Equivalent to 89px converted to rem */
 }
 
 .header__navbar {
@@ -333,11 +326,11 @@ template {
   display: flex;
 }
 
-.header__navbar-list > .header__navbar-item {
+.header__navbar-item {
   margin-right: 10px;
 }
 
-.header__navbar-list > .header__navbar-item > .header__navbar-link {
+.header__navbar-link {
   font-family: "Lato", sans-serif;
   font-size: 18px;
   text-decoration: none;
@@ -346,11 +339,11 @@ template {
   margin-right: 2rem;
 }
 
-.header__navbar-list > .header__navbar-item > .header__navbar-link:hover {
+.header__navbar-link:hover {
   text-decoration: underline;
 }
 
-.header__navbar-list > .header__navbar-item > .header__sub-links {
+.header__sub-links {
   display: none;
   position: absolute;
   z-index: 1;
@@ -358,20 +351,20 @@ template {
   padding: 10px;
 }
 
-.header__navbar-list > .header__navbar-item > .header__sub-links > .header__sub-link-item {
+.header__sub-link-item {
   margin-bottom: 5px;
 }
 
-.header__navbar-list > .header__navbar-item > .header__sub-links > .header__sub-link-item > .header__sub-link {
+.header__sub-link {
   text-decoration: none;
   color: #000;
 }
 
-.header__navbar-list > .header__navbar-item > .header__sub-links > .header__sub-link-item > .header__sub-link:hover {
+.header__sub-link:hover {
   text-decoration: underline;
 }
 
-.header__navbar-list > .header__navbar-item:hover > .header__sub-links {
+.header__navbar-item:hover .header__sub-links {
   display: block;
 }
 
@@ -380,7 +373,7 @@ template {
   background-color: #2b9763;
   color: #fff;
   border: none;
-  padding: 1rem 2rem;
+  padding: 1rem 2rem; /* Convert to rem */
   cursor: pointer;
   font-family: "Lato", sans-serif;
   border-radius: 16px;
@@ -394,28 +387,14 @@ template {
   list-style-type: none;
 }
 
-.header__navbar-arrow {
-  position: absolute;
-  top: 50%;
-  right: -20px;
-  transform: translateY(-50%);
-  width: 10px;
-  height: 10px;
-  border-right: 2px solid black;
-  border-top: 2px solid black;
-  transition: transform 0.3s ease-in-out;
-}
-
-.rotate {
-  transform: translateY(-50%) rotate(180deg);
-}
-
 .hero-banner {
   background-image: url("images/BannerBackground.jpg");
   background-size: cover;
   background-position: center;
   padding: 40px;
   color: #fff;
+  width: auto;
+  height: 37.125rem;
 }
 
 .hero-banner__content {
@@ -467,24 +446,24 @@ template {
   border-radius: 20px;
 }
 
-/* Adjusting the section size */
-.hero-banner {
-  height: 37.5rem;
-}
-
 .yourPartner {
   margin-top: 6.25rem;
   padding-left: 9.34375rem;
   max-height: 30rem;
   overflow-y: auto;
+  position: relative;
 }
 
-.yourPartner .yourPartner {
-  margin-top: 6.25rem;
-  padding-left: 9.34375rem;
+.yourPartner__content {
+  display: flex;
+  align-items: flex-start;
 }
 
-.yourPartner .yourPartner__title {
+.yourPartner__text {
+  flex: 1;
+}
+
+.yourPartner__title {
   font-family: "Archivo", sans-serif;
   font-weight: bold;
   font-size: 1.875rem;
@@ -494,7 +473,7 @@ template {
   text-overflow: ellipsis;
 }
 
-.yourPartner .yourPartner__paragraph {
+.yourPartner__paragraph {
   margin-top: 3.125rem;
   font-family: "Lato", sans-serif;
   font-size: 1.125rem;
@@ -502,13 +481,34 @@ template {
   max-width: 29.375rem;
 }
 
+.yourPartner__pictures {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-left: 1rem;
+  margin-right: 9.34375rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 .yourPartner__picture {
-  width: 40%;
-  max-width: 50;
-  height: 40%;
-  max-height: 50%;
-  margin-right: 0.5rem;
-  cursor: pointer;
+  width: 14.875rem; /* Convert to rem (238px) */
+  height: 14.875rem; /* Convert to rem (238px) */
+  margin-left: 0.5rem;
+  border-radius: 1.5625rem; /* Convert to rem (25px) */
+}
+
+.yourPartner .yourPartner__picture + .yourPartner__picture {
+  margin-left: 2.5rem; /* Convert to rem (40px) */
+}
+
+.section-divider {
+  height: 0.125rem; /* Equivalent to 2px converted to rem */
+  background-color: black;
+  margin-top: 4.6875rem; /* Equivalent to 75px converted to rem */
+  margin-left: 9.3125rem; /* Equivalent to 149px converted to rem */
+  margin-right: 9.3125rem; /* Equivalent to 149px converted to rem */
 }
 
 .theApp {
