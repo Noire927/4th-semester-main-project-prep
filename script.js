@@ -112,3 +112,24 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Fetch the JSON file
+fetch("images.json")
+  .then((response) => response.json())
+  .then((data) => {
+    const pictureSection = document.getElementById("pictureSection");
+
+    data.forEach((image) => {
+      const imgElement = document.createElement("img");
+      imgElement.src = image.src;
+      imgElement.alt = image.alt;
+      imgElement.classList.add("yourPartner__picture");
+
+      pictureSection.appendChild(imgElement);
+
+      console.log("Image added:", imgElement.src);
+    });
+  })
+  .catch((error) => {
+    console.log("An error occurred while fetching the JSON file:", error);
+  });
