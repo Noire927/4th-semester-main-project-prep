@@ -336,6 +336,9 @@ $button-height: 3.5rem; // Convert to rem (56px)
   }
 }
 
+$section-margin-top: 6.25rem; // Convert to rem (100px)
+$section-padding-left: 9.34375rem; // Convert to rem (149px)
+
 .ourMission {
   margin-top: $section-margin-top;
   padding-left: $section-padding-left;
@@ -359,6 +362,17 @@ $button-height: 3.5rem; // Convert to rem (56px)
     margin-top: 10px;
   }
 
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__text {
+    flex: 1;
+    margin-right: 1rem; /* Added: Create spacing between text and pictures */
+  }
+
   &__button {
     width: 29.375rem; // Convert to rem (470px)
     height: 3.5rem; // Convert to rem (56px)
@@ -379,6 +393,27 @@ $button-height: 3.5rem; // Convert to rem (56px)
     font-size: 1.125rem;
     color: #000000;
     margin-top: 50px; // Move the subtext 50px down
+  }
+
+  &__pictures {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Added: Align pictures in the center */
+    margin-right: 10rem; /* Added: Create spacing between pictures and text */
+  }
+
+  .ourMission__picture {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 1.5625rem;
+    margin-right: 20rem; /* Added: Create spacing between pictures */
+  }
+  .ourMission__pictureTwo {
+    border-radius: 1.5625rem;
+    margin: 2rem 0 0 0;
+    width: 20rem;
+    height: 20rem;
+    margin-right: 10rem; /* Added: Create spacing between pictures */
   }
 }
 
