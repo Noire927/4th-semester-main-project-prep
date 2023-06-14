@@ -75,6 +75,81 @@ navbarLink.addEventListener("mouseout", () => {
   arrow.classList.remove("rotate");
 });
 
+fetch("images.json")
+  .then((response) => response.json())
+  .then((data) => {
+    const pictureSection = document.getElementById("pictureSection");
+    const theAppPictureSection = document.getElementById(
+      "theAppPictureSection"
+    );
+    const theAppPicture = document.getElementById("appImage");
+    const prevPictureBtn = document.getElementById("prevPictureBtn");
+    const nextPictureBtn = document.getElementById("nextPictureBtn");
+    const galleryIndicators = document.querySelectorAll(
+      ".theApp__gallery-indicator"
+    );
+
+    // Get only the first two images from the data
+    const firstTwoImages = data.slice(0, 2);
+
+    firstTwoImages.forEach((image) => {
+      const imgElement = document.createElement("img");
+      imgElement.src = image.src;
+      imgElement.alt = image.alt;
+      imgElement.classList.add("yourPartner__picture");
+
+      pictureSection.appendChild(imgElement);
+
+      console.log("Image added to pictureSection:", imgElement.src);
+    });
+
+    // Get the rest of the images starting from the third index
+    const remainingImages = data.slice(2);
+
+    let currentImageIndex = 0; // Start with the first image from the remaining images
+    const totalImages = remainingImages.length;
+
+    // Function to update the image source based on the current index
+    const updateImageSource = () => {
+      theAppPicture.src = remainingImages[currentImageIndex].src;
+      theAppPicture.alt = remainingImages[currentImageIndex].alt;
+    };
+
+    // Function to update the active indicator
+    const updateActiveIndicator = () => {
+      galleryIndicators.forEach((indicator, index) => {
+        indicator.classList.toggle("active", index === currentImageIndex);
+      });
+    };
+
+    // Function to show the previous image
+    const showPreviousImage = () => {
+      currentImageIndex = (currentImageIndex - 1 + totalImages) % totalImages;
+      updateImageSource();
+      updateActiveIndicator();
+    };
+
+    // Function to show the next image
+    const showNextImage = () => {
+      currentImageIndex = (currentImageIndex + 1) % totalImages;
+      updateImageSource();
+      updateActiveIndicator();
+    };
+
+    // Event listener for the previous picture button
+    prevPictureBtn.addEventListener("click", showPreviousImage);
+
+    // Event listener for the next picture button
+    nextPictureBtn.addEventListener("click", showNextImage);
+
+    // Set the initial image and active indicator
+    updateImageSource();
+    updateActiveIndicator();
+  })
+  .catch((error) => {
+    console.log("An error occurred while fetching the JSON file:", error);
+  });
+
 //this is purely for the exam presentation
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -112,65 +187,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
-fetch("images.json")
-  .then((response) => response.json())
-  .then((data) => {
-    const pictureSection = document.getElementById("pictureSection");
-    const theAppPictureSection = document.getElementById(
-      "theAppPictureSection"
-    );
-    const theAppPicture = document.getElementById("appImage");
-    const prevPictureBtn = document.getElementById("prevPictureBtn");
-    const nextPictureBtn = document.getElementById("nextPictureBtn");
-
-    // Get only the first two images from the data
-    const firstTwoImages = data.slice(0, 2);
-
-    firstTwoImages.forEach((image) => {
-      const imgElement = document.createElement("img");
-      imgElement.src = image.src;
-      imgElement.alt = image.alt;
-      imgElement.classList.add("yourPartner__picture");
-
-      pictureSection.appendChild(imgElement);
-
-      console.log("Image added to pictureSection:", imgElement.src);
-    });
-
-    // Get the rest of the images starting from the third index
-    const remainingImages = data.slice(2);
-
-    let currentImageIndex = 0; // Start with the first image from the remaining images
-    const totalImages = remainingImages.length;
-
-    // Function to update the image source based on the current index
-    const updateImageSource = () => {
-      theAppPicture.src = remainingImages[currentImageIndex].src;
-      theAppPicture.alt = remainingImages[currentImageIndex].alt;
-    };
-
-    // Function to show the previous image
-    const showPreviousImage = () => {
-      currentImageIndex = (currentImageIndex - 1 + totalImages) % totalImages;
-      updateImageSource();
-    };
-
-    // Function to show the next image
-    const showNextImage = () => {
-      currentImageIndex = (currentImageIndex + 1) % totalImages;
-      updateImageSource();
-    };
-
-    // Event listener for the previous picture button
-    prevPictureBtn.addEventListener("click", showPreviousImage);
-
-    // Event listener for the next picture button
-    nextPictureBtn.addEventListener("click", showNextImage);
-
-    // Set the initial image
-    updateImageSource();
-  })
-  .catch((error) => {
-    console.log("An error occurred while fetching the JSON file:", error);
-  });

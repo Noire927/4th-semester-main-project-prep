@@ -295,7 +295,7 @@ $button-height: 3.5rem; // Convert to rem (56px)
     border-radius: 1.5625rem; // Convert to rem (25px)
   }
 
-  .theApp__gallery-button {
+  &__gallery-button {
     /* Your button styles here */
     background-color: #2b9763;
     border-radius: 50px;
@@ -310,7 +310,27 @@ $button-height: 3.5rem; // Convert to rem (56px)
     cursor: pointer;
     margin-top: 20rem;
   }
+
+  &__gallery-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem; /* Adjust the top margin as needed */
+    margin-bottom: 2rem; /* Add a bottom margin for spacing */
+  }
+
+  &__gallery-indicator {
+    width: 0.75rem; /* Increase the width */
+    height: 0.75rem; /* Increase the height */
+    background-color: gray;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+  }
+
+  &__gallery-indicator.active {
+    background-color: green;
+  }
 }
+
 .ourMission {
   margin-top: $section-margin-top;
   padding-left: $section-padding-left;

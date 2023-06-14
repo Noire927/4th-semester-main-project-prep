@@ -553,7 +553,7 @@ template {
   height: auto;
   border-radius: 1.5625rem;
 }
-.theApp .theApp__gallery-button {
+.theApp__gallery-button {
   /* Your button styles here */
   background-color: #2b9763;
   border-radius: 50px;
@@ -567,6 +567,22 @@ template {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   margin-top: 20rem;
+}
+.theApp__gallery-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem; /* Adjust the top margin as needed */
+  margin-bottom: 2rem; /* Add a bottom margin for spacing */
+}
+.theApp__gallery-indicator {
+  width: 0.75rem; /* Increase the width */
+  height: 0.75rem; /* Increase the height */
+  background-color: gray;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+.theApp__gallery-indicator.active {
+  background-color: green;
 }
 
 .ourMission {
