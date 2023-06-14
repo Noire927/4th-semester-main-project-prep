@@ -4,19 +4,19 @@ const imageContainer = document.querySelector(
 );
 const images = Array.from(imageContainer.querySelectorAll("img"));
 const imageWidth = images[0].getBoundingClientRect().width;
+const totalWidth = imageWidth * images.length;
 
 // Set the width of image container based on the number of images
-imageContainer.style.width = `${imageWidth * images.length}px`;
-
-// Calculate the total width of all images
-const totalWidth = imageWidth * images.length;
+imageContainer.style.width = `${totalWidth}px`;
 
 // Create an invisible box to wrap the images
 const invisibleBox = document.createElement("div");
-invisibleBox.style.width = `${totalWidth}px`;
-invisibleBox.style.height = "100%";
-invisibleBox.style.overflow = "hidden";
-invisibleBox.style.position = "relative";
+invisibleBox.style.cssText = `
+  width: ${totalWidth}px;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+`;
 imageContainer.appendChild(invisibleBox);
 
 // Move the images inside the invisible box
@@ -35,8 +35,8 @@ function scrollAnimation() {
 
   // Check if the first image has completely disappeared on the left
   if (Math.abs(translateX) >= imageWidth) {
-    invisibleBox.style.transform = `translateX(0)`;
-    const movedImage = invisibleBox.removeChild(invisibleBox.firstChild);
+    invisibleBox.style.transform = "translateX(0)";
+    const movedImage = invisibleBox.firstElementChild;
     invisibleBox.appendChild(movedImage);
     translateX = 0;
   }

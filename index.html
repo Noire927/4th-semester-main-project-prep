@@ -101,20 +101,23 @@
         </div>
         <div class="theApp__image-wrapper">
           <button id="prevPictureBtn" class="theApp__gallery-button">←</button>
-          <img
-            id="appImage"
-            src="images/AppOne.png"
-            alt="App Image"
-            class="theApp__picture"
-          />
+          <section class="theApp__gallery-active">
+            <img
+              id="appImage"
+              src="images/AppOne.png"
+              alt="App Image"
+              class="theApp__picture"
+            />
+            <div class="theApp__gallery-indicators">
+              <div class="theApp__gallery-indicator active"></div>
+              <div class="theApp__gallery-indicator"></div>
+              <div class="theApp__gallery-indicator"></div>
+              <div class="theApp__gallery-indicator"></div>
+            </div>
+          </section>
           <button id="nextPictureBtn" class="theApp__gallery-button">→</button>
-          <div class="theApp__gallery-indicators">
-            <div class="theApp__gallery-indicator active"></div>
-            <div class="theApp__gallery-indicator"></div>
-            <div class="theApp__gallery-indicator"></div>
-            <div class="theApp__gallery-indicator"></div>
-          </div>
         </div>
+      </div>
     </section>
 
     <div class="section-divider"></div>
