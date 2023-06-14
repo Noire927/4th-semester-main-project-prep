@@ -1,5 +1,6 @@
 @use "../core/" as *;
 
+// Variables
 $header-padding: 1rem;
 $header-logo-spacing: 1rem;
 $header-item-spacing: 2.25rem;
@@ -7,20 +8,25 @@ $header-arrow-size: 0.5rem;
 $section-padding: 1rem;
 $section-margin-top: 6.25rem; // Convert to rem (100px)
 $section-padding-left: 9.34375rem; // Convert to rem (149px)
+$picture-size: 14.875rem; // Convert to rem (238px)
+$picture-spacing: 0.5rem; // Convert to rem (8px)
+$button-width: 29.375rem; // Convert to rem (470px)
+$button-height: 3.5rem; // Convert to rem (56px)
 
+// Header
 .header {
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: $header-padding;
 }
 
 .header__logo {
-  margin-right: 10px;
+  margin-right: $header-logo-spacing;
 }
 
 .header__logo-image {
-  width: 21.8125rem; /* Equivalent to 349px converted to rem */
-  height: 5.5625rem; /* Equivalent to 89px converted to rem */
+  width: 21.8125rem; // Equivalent to 349px converted to rem
+  height: 5.5625rem; // Equivalent to 89px converted to rem
 }
 
 .header__navbar {
@@ -33,7 +39,7 @@ $section-padding-left: 9.34375rem; // Convert to rem (149px)
 }
 
 .header__navbar-item {
-  margin-right: 10px;
+  margin-right: $header-item-spacing;
 }
 
 .header__navbar-link {
@@ -79,7 +85,7 @@ $section-padding-left: 9.34375rem; // Convert to rem (149px)
   background-color: #2b9763;
   color: #fff;
   border: none;
-  padding: 1rem 2rem; /* Convert to rem */
+  padding: $header-padding;
   cursor: pointer;
   font-family: "Lato", sans-serif;
   border-radius: 16px;
@@ -89,10 +95,7 @@ $section-padding-left: 9.34375rem; // Convert to rem (149px)
   background-color: #41d990;
 }
 
-.header__sub-link-item {
-  list-style-type: none;
-}
-
+// Hero Banner
 .hero-banner {
   background-image: url("images/BannerBackground.jpg");
   background-size: cover;
@@ -110,10 +113,10 @@ $section-padding-left: 9.34375rem; // Convert to rem (149px)
 
   &__text-bubble {
     position: relative;
-    left: 9.3125rem; // 149px converted to rem
-    top: 9.3125rem; // 149px converted to rem
-    width: 28rem; // 448px converted to rem
-    height: 9.25rem; // 148px converted to rem
+    left: $section-padding-left;
+    top: $section-padding-left;
+    width: 28rem; // Equivalent to 448px converted to rem
+    height: 9.25rem; // Equivalent to 148px converted to rem
     padding: 20px;
     background-color: rgba(
       255,
@@ -153,96 +156,112 @@ $section-padding-left: 9.34375rem; // Convert to rem (149px)
   }
 
   &__image {
-    height: 37.5rem; // 600px converted to rem
+    height: 37.5rem; // Equivalent to 600px converted to rem
     border-radius: 20px;
   }
 }
 
+// Your Partner Section
 .yourPartner {
-  margin-top: 6.25rem; // Convert to rem (100px)
-  padding-left: 9.34375rem; // Convert to rem (149px)
-  max-height: 30rem; // Convert to rem (480px)
+  margin-top: $section-margin-top;
+  padding-left: $section-padding-left;
+  max-height: 30rem; // Equivalent to 480px converted to rem
   overflow-y: auto;
-  position: relative; // Add position relative
+  position: relative;
 
   &__content {
     display: flex;
-    align-items: flex-start; // Align content to the top
+    align-items: flex-start;
   }
 
   &__text {
-    flex: 1; // Take remaining width
+    flex: 1;
   }
 
   &__title {
     font-family: "Archivo", sans-serif;
     font-weight: bold;
-    font-size: 1.875rem; // Convert to rem (30px)
+    font-size: 1.875rem; // Equivalent to 30px converted to rem
     color: #17a754;
-    max-width: 29.375rem; // Convert to rem (470px)
+    max-width: 29.375rem; // Equivalent to 470px converted to rem
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
   &__paragraph {
-    margin-top: 3.125rem; // Convert to rem (50px)
+    margin-top: 3.125rem; // Equivalent to 50px converted to rem
     font-family: "Lato", sans-serif;
-    font-size: 1.125rem; // Convert to rem (18px)
+    font-size: 1.125rem; // Equivalent to 18px converted to rem
     color: #000000;
-    max-width: 29.375rem; // Convert to rem (470px)
+    max-width: 29.375rem; // Equivalent to 470px converted to rem
   }
 
   &__pictures {
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end; // Change align-items to flex-end
-    margin-left: 1rem;
-    margin-right: 9.34375rem;
-    position: absolute; // Add position absolute
-    bottom: 0; // Position the images at the bottom
-    right: 0; // Position the images at the right
+    align-items: flex-end;
+    margin-left: $picture-spacing;
+    margin-right: $section-padding-left;
+    position: absolute;
+    bottom: 0;
+    right: 0;
   }
 
   &__picture {
-    width: 14.875rem; /* Convert to rem (238px) */
-    height: 14.875rem; /* Convert to rem (238px) */
-    margin-left: 0.5rem;
-    border-radius: 1.5625rem; /* Convert to rem (25px) */
+    width: $picture-size;
+    height: $picture-size;
+    margin-left: $picture-spacing;
+    border-radius: $picture-size / 16; // Equivalent to 1rem (16px)
   }
+
   .yourPartner__picture + .yourPartner__picture {
-    margin-left: 2.5rem; /* Convert to rem (40px) */
+    margin-left: $picture-spacing * 2; // Equivalent to 2rem (16px)
   }
 }
 
+// Section Divider
 .section-divider {
-  height: 0.125rem; /* Equivalent to 2px converted to rem */
+  height: 0.125rem; // Equivalent to 2px converted to rem
   background-color: black;
-  margin-top: 4.6875rem; /* Equivalent to 75px converted to rem */
-  margin-left: 9.3125rem; /* Equivalent to 149px converted to rem */
-  margin-right: 9.3125rem; /* Equivalent to 149px converted to rem */
+  margin-top: 4.6875rem; // Equivalent to 75px converted to rem
+  margin-left: $section-padding-left;
+  margin-right: $section-padding-left;
 }
 
+// The App Section
 .theApp {
-  margin-top: $section-margin-top;
   padding-left: $section-padding-left;
-  margin-bottom: 3.125rem; // Convert to rem (100px)
+  margin-bottom: 3.125rem; // Equivalent to 50px converted to rem
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    margin-top: $section-margin-top;
+    margin-bottom: 3.125rem; // Equivalent to 50px converted to rem
+  }
+
+  &__text {
+    flex: 1;
+  }
 
   &__title {
     font-family: "Archivo", sans-serif;
     font-weight: bold;
-    font-size: 1.875rem; // Convert to rem (30px)
+    font-size: 1.875rem; // Equivalent to 30px converted to rem
     color: #17a754;
-    max-width: 29.375rem; // Convert to rem (470px)
+    max-width: 29.375rem; // Equivalent to 470px converted to rem
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
   &__paragraph {
-    margin-top: 3.125rem; // Convert to rem (50px)
+    margin-top: 3.125rem; // Equivalent to 50px converted to rem
     font-family: "Lato", sans-serif;
-    font-size: 1.125rem; // Convert to rem (18px)
+    font-size: 1.125rem; // Equivalent to 18px converted to rem
     color: #000000;
-    max-width: 29.375rem; // Convert to rem (470px)
+    max-width: 29.375rem; // Equivalent to 470px converted to rem
   }
 
   &__button {
@@ -250,17 +269,46 @@ $section-padding-left: 9.34375rem; // Convert to rem (149px)
     height: 3.5rem; // Convert to rem (56px)
     border-radius: 16px;
     background-color: #ffffff;
-    border-style: solid 1px black;
-    cursor: pointer;
     border: none;
     color: #000000;
     font-family: "Archivo", sans-serif;
     font-size: 1.125rem; // Convert to rem (18px)
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-top: 2rem; // Add margin-top to separate button from text
 
     &:hover {
       background-color: #41d990;
     }
+
+    &__gallery__button {
+      /* Your button styles here */
+      background-color: #2b9763;
+      border-radius: 50px;
+      color: white;
+      /* Adjust the styles to match your desired appearance */
+      width: 10rem;
+      height: 2.5rem;
+      border: none;
+      font-family: "Archivo", sans-serif;
+      font-size: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      margin-top: 2rem;
+    }
+  }
+
+  &__image-wrapper {
+    display: flex;
+    justify-content: space-between; /* Add space between the buttons and the image */
+    align-items: flex-start;
+    margin-right: 245px;
+  }
+
+  &__picture {
+    width: 500px; // Convert to rem (238px)
+    height: auto; // Convert to rem (238px)
+    border-radius: 1.5625rem; // Convert to rem (25px)
   }
 }
 

@@ -6,5 +6,21 @@
   {
     "src": "images/Goal2.png",
     "alt": "Image 2"
+  },
+  {
+    "src": "images/AppOne.png",
+    "alt": "App One"
+  },
+  {
+    "src": "images/AppTwo.png",
+    "alt": "App Two"
+  },
+  {
+    "src": "images/AppThree.png",
+    "alt": "App Three"
+  },
+  {
+    "src": "images/AppFour.png",
+    "alt": "App Four"
   }
 ]

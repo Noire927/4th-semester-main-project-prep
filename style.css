@@ -305,16 +305,16 @@ template {
 .header {
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 1rem;
 }
 
 .header__logo {
-  margin-right: 10px;
+  margin-right: 1rem;
 }
 
 .header__logo-image {
-  width: 21.8125rem; /* Equivalent to 349px converted to rem */
-  height: 5.5625rem; /* Equivalent to 89px converted to rem */
+  width: 21.8125rem;
+  height: 5.5625rem;
 }
 
 .header__navbar {
@@ -327,7 +327,7 @@ template {
 }
 
 .header__navbar-item {
-  margin-right: 10px;
+  margin-right: 2.25rem;
 }
 
 .header__navbar-link {
@@ -373,7 +373,7 @@ template {
   background-color: #2b9763;
   color: #fff;
   border: none;
-  padding: 1rem 2rem; /* Convert to rem */
+  padding: 1rem;
   cursor: pointer;
   font-family: "Lato", sans-serif;
   border-radius: 16px;
@@ -381,10 +381,6 @@ template {
 
 .header__contact-button:hover {
   background-color: #41d990;
-}
-
-.header__sub-link-item {
-  list-style-type: none;
 }
 
 .hero-banner {
@@ -405,8 +401,8 @@ template {
 
 .hero-banner__text-bubble {
   position: relative;
-  left: 9.3125rem;
-  top: 9.3125rem;
+  left: 9.34375rem;
+  top: 9.34375rem;
   width: 28rem;
   height: 9.25rem;
   padding: 20px;
@@ -485,7 +481,7 @@ template {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
   margin-right: 9.34375rem;
   position: absolute;
   bottom: 0;
@@ -493,28 +489,40 @@ template {
 }
 
 .yourPartner__picture {
-  width: 14.875rem; /* Convert to rem (238px) */
-  height: 14.875rem; /* Convert to rem (238px) */
+  width: 14.875rem;
+  height: 14.875rem;
   margin-left: 0.5rem;
-  border-radius: 1.5625rem; /* Convert to rem (25px) */
+  border-radius: 0.9296875rem;
 }
 
 .yourPartner .yourPartner__picture + .yourPartner__picture {
-  margin-left: 2.5rem; /* Convert to rem (40px) */
+  margin-left: 1rem;
 }
 
 .section-divider {
-  height: 0.125rem; /* Equivalent to 2px converted to rem */
+  height: 0.125rem;
   background-color: black;
-  margin-top: 4.6875rem; /* Equivalent to 75px converted to rem */
-  margin-left: 9.3125rem; /* Equivalent to 149px converted to rem */
-  margin-right: 9.3125rem; /* Equivalent to 149px converted to rem */
+  margin-top: 4.6875rem;
+  margin-left: 9.34375rem;
+  margin-right: 9.34375rem;
 }
 
 .theApp {
-  margin-top: 6.25rem;
   padding-left: 9.34375rem;
   margin-bottom: 3.125rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.theApp__content {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 6.25rem;
+  margin-bottom: 3.125rem;
+}
+
+.theApp__text {
+  flex: 1;
 }
 
 .theApp__title {
@@ -540,17 +548,46 @@ template {
   height: 3.5rem;
   border-radius: 16px;
   background-color: #ffffff;
-  border-style: solid 1px black;
-  cursor: pointer;
   border: none;
   color: #000000;
   font-family: "Archivo", sans-serif;
   font-size: 1.125rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  margin-top: 2rem;
 }
 
 .theApp__button:hover {
   background-color: #41d990;
+}
+
+.theApp__button__gallery__button {
+  /* Your button styles here */
+  background-color: #2b9763;
+  border-radius: 50px;
+  color: white;
+  /* Adjust the styles to match your desired appearance */
+  width: 10rem;
+  height: 2.5rem;
+  border: none;
+  font-family: "Archivo", sans-serif;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+.theApp__image-wrapper {
+  display: flex;
+  justify-content: space-between; /* Add space between the buttons and the image */
+  align-items: flex-start;
+  margin-right: 245px;
+}
+
+.theApp__picture {
+  width: 500px;
+  height: auto;
+  border-radius: 1.5625rem;
 }
 
 .ourMission {
