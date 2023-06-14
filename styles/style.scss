@@ -561,22 +561,6 @@ template {
   background-color: #41d990;
 }
 
-.theApp__button__gallery__button {
-  /* Your button styles here */
-  background-color: #2b9763;
-  border-radius: 50px;
-  color: white;
-  /* Adjust the styles to match your desired appearance */
-  width: 10rem;
-  height: 2.5rem;
-  border: none;
-  font-family: "Archivo", sans-serif;
-  font-size: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  margin-top: 2rem;
-}
-
 .theApp__image-wrapper {
   display: flex;
   justify-content: space-between; /* Add space between the buttons and the image */
@@ -588,6 +572,22 @@ template {
   width: 500px;
   height: auto;
   border-radius: 1.5625rem;
+}
+
+.theApp .theApp__gallery-button {
+  /* Your button styles here */
+  background-color: #2b9763;
+  border-radius: 50px;
+  color: white;
+  /* Adjust the styles to match your desired appearance */
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  font-family: "Archivo", sans-serif;
+  font-size: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  margin-top: 20rem;
 }
 
 .ourMission {

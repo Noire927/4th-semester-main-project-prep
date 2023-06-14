@@ -280,22 +280,6 @@ $button-height: 3.5rem; // Convert to rem (56px)
     &:hover {
       background-color: #41d990;
     }
-
-    &__gallery__button {
-      /* Your button styles here */
-      background-color: #2b9763;
-      border-radius: 50px;
-      color: white;
-      /* Adjust the styles to match your desired appearance */
-      width: 10rem;
-      height: 2.5rem;
-      border: none;
-      font-family: "Archivo", sans-serif;
-      font-size: 1rem;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      cursor: pointer;
-      margin-top: 2rem;
-    }
   }
 
   &__image-wrapper {
@@ -310,8 +294,23 @@ $button-height: 3.5rem; // Convert to rem (56px)
     height: auto; // Convert to rem (238px)
     border-radius: 1.5625rem; // Convert to rem (25px)
   }
-}
 
+  .theApp__gallery-button {
+    /* Your button styles here */
+    background-color: #2b9763;
+    border-radius: 50px;
+    color: white;
+    /* Adjust the styles to match your desired appearance */
+    width: 4rem;
+    height: 4rem;
+    border: none;
+    font-family: "Archivo", sans-serif;
+    font-size: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-top: 20rem;
+  }
+}
 .ourMission {
   margin-top: $section-margin-top;
   padding-left: $section-padding-left;
