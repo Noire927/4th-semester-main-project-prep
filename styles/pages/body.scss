@@ -496,10 +496,6 @@ $section-padding-left: 9.34375rem; // Convert to rem (149px)
   justify-content: space-evenly;
 
   section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
     h2 {
       font-family: "Archivo", sans-serif;
       font-size: 24px;
@@ -541,7 +537,6 @@ $section-padding-left: 9.34375rem; // Convert to rem (149px)
 
     &__social-icons {
       display: flex;
-      align-items: center;
 
       a {
         width: 20%; // Adjust the width as desired
@@ -553,6 +548,22 @@ $section-padding-left: 9.34375rem; // Convert to rem (149px)
       }
     }
   }
+}
+
+.footer__social {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 10rem;
+}
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
 }
 
 .footerImages {
