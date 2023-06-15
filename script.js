@@ -56,7 +56,7 @@ document.addEventListener("visibilitychange", () => {
   }
 });
 
-//Adds a arrow to the navbar
+// Adds an arrow to the navbar
 // Get the navbar link
 const navbarLink = document.querySelector(".header__navbar-link");
 
@@ -100,7 +100,10 @@ fetch("images.json")
 
       pictureSection.appendChild(imgElement);
 
-      console.log("Image added to pictureSection:", imgElement.src);
+      console.log(
+        "Loaded Image goal 1 & 2 from JSON and added to pictureSection:",
+        imgElement.src
+      );
     });
 
     // Get the rest of the images starting from the third index
@@ -127,6 +130,9 @@ fetch("images.json")
       currentImageIndex = (currentImageIndex - 1 + totalImages) % totalImages;
       updateImageSource();
       updateActiveIndicator();
+
+      console.log("Previous Image Index:", currentImageIndex);
+      console.log("Previous Image Data:", remainingImages[currentImageIndex]);
     };
 
     // Function to show the next image
@@ -134,6 +140,9 @@ fetch("images.json")
       currentImageIndex = (currentImageIndex + 1) % totalImages;
       updateImageSource();
       updateActiveIndicator();
+
+      console.log("Next Image Index:", currentImageIndex);
+      console.log("Next Image Data:", remainingImages[currentImageIndex]);
     };
 
     // Event listener for the previous picture button
@@ -150,7 +159,7 @@ fetch("images.json")
     console.log("An error occurred while fetching the JSON file:", error);
   });
 
-//this is purely for the exam presentation
+// This is purely for the exam presentation
 
 document.addEventListener("DOMContentLoaded", function () {
   var box = document.querySelector(".box");
