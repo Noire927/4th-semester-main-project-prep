@@ -474,6 +474,7 @@ $section-padding-left: 9.34375rem; // Convert to rem (149px)
     display: flex;
     justify-content: center;
     margin-top: 2.5rem; // Convert 40px to rem
+    gap: 1.25rem; // Convert 20px to rem
 
     img {
       max-width: 12.375rem; // Convert 198px to rem
