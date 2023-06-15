@@ -565,7 +565,7 @@ template {
   display: flex;
   justify-content: space-between; /* Add space between the buttons and the image */
   align-items: flex-start;
-  margin-right: 245px;
+  margin-right: 11rem;
 }
 
 .theApp__picture {
@@ -600,6 +600,7 @@ template {
   justify-content: center;
   margin-top: 1rem; /* Adjust the top margin as needed */
   margin-bottom: 2rem; /* Add a bottom margin for spacing */
+  margin-left: 4rem;
 }
 
 .theApp__gallery-indicator {
